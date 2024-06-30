@@ -1,0 +1,7 @@
+.body{
+    display: flex;
+    color: antiquewhite;
+    background-color: grey;
+    height: 5vh;
+    justify-content: space-around;
+}

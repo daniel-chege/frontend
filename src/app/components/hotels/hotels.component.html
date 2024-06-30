@@ -1,0 +1,33 @@
+<!-- <p>admin-hotels works!</p>
+<form [formGroup]="hotelForm" (ngSubmit)="onSubmit()">
+    <label for="name">Hotel Name:</label>
+    <input id="name" formControlName="name">
+    
+    <label for="price">Price</label>
+    <input id="price" formControlName="price">
+    
+    <button type="submit">Save Hotel</button>
+  </form>
+   -->
+
+   <div class="hotel-form-container">
+    <h2>Manage Hotels</h2>
+    <form [formGroup]="hotelForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Hotel Name</label>
+        <input id="name" type="text" formControlName="name" placeholder="Enter hotel name" />
+        <div *ngIf="hotelForm.get('name')?.invalid && hotelForm.get('name')?.touched" class="error">
+          Name is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input id="price" type="text" formControlName="price" placeholder="Enter price" />
+        <div *ngIf="hotelForm.get('price')?.invalid && hotelForm.get('price')?.touched" class="error">
+          Price is required
+        </div>
+      </div>
+      <button type="submit" [disabled]="hotelForm.invalid">Submit</button>
+    </form>
+  </div>
+  

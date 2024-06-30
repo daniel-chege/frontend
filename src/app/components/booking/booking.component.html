@@ -1,0 +1,22 @@
+<!-- <p>admin-bookings works!</p> -->
+<!-- <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+    <label for="bookingName">bookingName</label>
+    <input id="bookingName" formControlName="bookingName">
+    
+    <button type="submit">Save Booking</button>
+  </form> -->
+
+  <div class="booking-form-container">
+    <h2>Manage Bookings</h2>
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="bookingName">Booking Name</label>
+        <input id="bookingName" type="text" formControlName="bookingName" placeholder="Enter booking name" />
+        <div *ngIf="bookingForm.get('bookingName')?.invalid && bookingForm.get('bookingName')?.touched" class="error">
+          Booking name is required
+        </div>
+      </div>
+      <button type="submit" [disabled]="bookingForm.invalid">Submit</button>
+    </form>
+  </div>
+  
